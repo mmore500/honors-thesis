@@ -1,0 +1,55 @@
+\chapter{Experimental Proposal} \label{sec:experiment}
+The goal of this experiment is to test the effects of environmental variability, fitness criteria variability, and local search via phenotypic plasticity on evolvability and performance of an evolving GRN. In evolvability search, individuals are selected for the amount of phenotypic diversity they can produce in their offspring. In novelty search, individuals are selected for their 
+
+model: genetic regulatory network 
+
+\cite{Wilder2015ReconcilingEvolvability} evolved towards target phenotype (pattern of gene expression) in adaptive selection
+
+\cite{Reisinger2005TowardsEvolvability} on bilateral symmetry domain
+
+types of selection tested by Wilder:
+\begin{itemize}
+  \item static adaptive selection
+  \item fluctuating adaptive selection: random fluctuating selection (target randomly assigned to a new value) and modularly varying goals (MVG) (half of target changed each time, which half changed alternates)
+  \item divergent selection (i.e. novelty search): individuals selected for phenotypic uniqueness
+  \item neutral evolution: no selection, just genetic drift
+\end{itemize}
+
+phenomena tested by Reisinger:
+\begin{itemize}
+  \item developmental variance: 
+  \begin{itemize}
+    \item ``The developmental variance parameter describes the trait's propensity to be mis-expressed during fitness evaluation with multiple evaluations. Each phenotypic trait has a probability of being mutated (flipped) during development with a probability equal to the variance parameter.'' \cite{Reisinger2005TowardsEvolvability}
+    \item ``Combining developmental variance with multiple evaluations of a single genotype yields an average of the local search space around the solution, biased by the linkage parameters.'' \cite{Reisinger2005TowardsEvolvability}
+    \item ``Tying linkage directly to fitness is important for rewarding solutions that have learned the 'correct' parameter linkage for the target problem.'' \cite{Reisinger2005TowardsEvolvability}
+    \item random developmental variance had no effect, but developmental variance following the linkage rule (which we are trying to get to ``match'' the fitness function drift rule) has a significant positive effect on evolvability
+    \item ``developmental variance plays a large role in determining evolvability, and in particular that this variance must be meaningful with respect to the target fitness function, otherwise there is no evolvability increase.'' \cite{Reisinger2005TowardsEvolvability}
+    \item this was only tested on the modified direct encoding (each phenotypic trait has a linkage and developmental variance parameter)
+  \end{itemize}
+\end{itemize}
+
+proposed experimental conditions (not mutually exclusive):
+\begin{itemize}
+  \item environmental variability: different starting conditions for genes (or maybe fixed concentrations?) at each evaluation trial, but same fitness function. This is analogous to Figure \inputandref{elephant_developmental_perturbation}.
+  \begin{itemize}
+  	\item ``the base-line GRN has a randomized initial tf state, in order to encourage the GRN function to become robust (i.e. applicable to many environments)'' \cite{Reisinger2005TowardsEvolvability}
+  \end{itemize}
+  \item fitness function variability: at each evaluation, a random fitness function is applied correlating with an environmental signal during the developmental process; the individual has to develop alternate phenotypes depending on the signal \inputandref{plant_developmental_perturbation}.
+  \item plasticity: a set of evaluations take place with either 
+  \begin{enumerate}[label=\alph*)]
+    \item random changes to the genotype between evaluations or
+    \item random changes to the phenotype between evaluations 
+    \item local search (i.e. $n$ changes made, best performer chosen, another $n$ changes made to that best performer, etc. repeated $m$ times)  changes to the genotype between evaluations or
+    \item local search (i.e. $n$ changes made, best performer chosen, another $n$ changes made to that best performer, etc. repeated $m$ times) to the phenotype between evaluations 
+  \end{enumerate}
+  and, after fitness scores are collected, the ultimate fitness score is determined either as
+  \begin{enumerate}[label=\alph*)]
+    \item an average of the fitness scores
+    \item the maximum of the fitness scores
+  \end{enumerate}
+  Plasticity could be especially interesting to compare between the models of \cite{Reisinger2005TowardsEvolvability} and \cite{Wilder2015ReconcilingEvolvability} because \cite{Wilder2015ReconcilingEvolvability} has the possibility of catastrophic failure (i.e. nonconvergence of GRN)
+\end{itemize}
+
+Perhaps these could be hooked up with fluctuating adaptive selection as well?
+
+The idea of environmental variability and fitness function variability is to force an individual to be able to simultaneously access several distinct phenotypic endpoints through its development process. Perhaps plasticity would have some kind of a smoothing effect on the fitness landscape or lead to the Baldwin Effect. Or perhaps, if the developmental environment is varied but the fitness function remains the same homeostatic mechanisms will be developed to resist fluctuations in the developmental environment. How, if at all, will these effects translate into evolvability at the individual and population levels?

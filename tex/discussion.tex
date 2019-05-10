@@ -1,0 +1,175 @@
+\chapter{Discussion} \label{sec:discussion}
+
+In Chapters \ref{sec:proximate}, \ref{sec:intermediate}, and \ref{sec:ultimate} we have toured through a sprawling menagerie of causal factors associated with evolvability.
+These factors included aspects of internal structures of biological organisms (e.g. modularity), the processes that give rise to the phenotypic structures observed in mature biological organisms (e.g. exploratory growth), the constitution of the environments biological organisms inhabit (e.g. fitness degeneracy), interplay between the structure of biological organisms and the environment (e.g. plasticity), and specific evolutionary processes through which complexity is thought to emerge (e.g. duplication and divergence).
+This expedition traveled through a wide range of explanatory scope --- we discussed causal factors related to the immediate physical forms of biological organisms (Chapter \ref{sec:proximate}) and causal factors related to overarching design patterns associated with biological organisms (Chapter \ref{sec:intermediate})
+Finally, Chapter \ref{sec:ultimate} reviewed causal factors rooted in the fundamental characteristics of organisms and their environments.
+Despite the broad nature of the survey presented in Chapters \ref{sec:proximate}, \ref{sec:intermediate}, and \ref{sec:ultimate}, it does not constitute an exhaustive presentation of factors related to evolvabiltiy.
+However, this survey is wide-ranging enough to begin to appreciate broader patterns among the factors that contribute to evolvability.
+This background should also be sufficient to shed light on strategies to promote evolvability practiced in evolutionary computing.
+
+This chapter aims to leverage overarching theoretical perspective on evolvability from the proximate-intermediate-ultimate organizational scheme to describe strategies to promote evolvability in an evolutionary computing setting. Selected efforts to promote evolvability from the evolutionary computing literature will be reported to illustrate the strategies described.
+
+As we have seen in Chapters \ref{sec:proximate}, \ref{sec:intermediate}, and \ref{sec:ultimate}, evolvability is a diffuse concept with multiple causality.
+Recall that at the most fundamental level, as introduced in Chapter \ref{sec:definition}, evolvability stems from the availability of heritable variation that is viable.
+Recall, also, the two major elements at play in relation to evolvability: an ability to readily produce \textit{novel} heritable phenotypic variation and a bias towards \textit{viable} variation.
+Chasing evolvability further down the rabbit hole, the chain of causality rapidly branches out to a diverse set of interconnected factors; evolvability stems from a dense web of interactions between many concepts.
+The causal factors related to evolvability do not readily lend themselves to being cleanly teased apart.
+However, the proximate-intermediate-ultimate conceptual framework does provide some useful insight into the overall causal framework behind evolvability.
+We will consider separately the two major components of an evolutionary algorithm: development (Section \ref{sec:development}) and selection mapping (Section \ref{sec:selection}).
+(Development refers to the genotype-phenotype mapping, and selection refers to the phenotype-fitness mapping; the terms development and genotype-phenotype mapping and the terms selection and phenotype-fitness mapping will be employed interchangeably).
+The lens of the proximate-intermediate-ultimate conceptual framework will help us distinguish between biologically-inspired and artificial strategies to promote evolvability and better understand both.
+We will see that biologically-inspired strategies to promote evolvability act at the ultimate level of causality while artificial strategies instead act at the proximate level, in relation to the genotype-phenotype mapping and at the intermediate level, in relation to the phenotype-fitness mapping.
+At the end of the discussion in Section \ref{sec:synthesis}, we will compare biologically-motivated and artificial strategies to promote evolvability and consider how they reflect broader themes in the field of evolutionary computing.
+
+
+\section{Development} \label{sec:development}
+\subsection{Theoretical Analysis: Biologically-Motivated Strategies}
+
+Discussing genotype-phenotype mapping, it is important to recognize that the biological development process itself is largely defined in the genotype and is therefore subject to evolution.
+Thus, many aspects of the genotype-phenotype mapping manifest through the evolutionary process.
+For example, direct and indirect plasticity are evolved capacities to withstand and exploit environmental influence on the phenotype.
+In the context of evolutionary computing, these characteristics of the genotype-phenotype mapping would not be expected to be present in arbitrarily generated starter individuals.
+In our proximate-intermediate-ultimate scheme, these characteristics of the genotype-phenotype mapping would fall under proximate and intermediate causes of evolvability.
+In other words, the proximate and intermediate causal factors described in Chapters \ref{sec:proximate} and \ref{sec:intermediate} manifest in biological organisms as a result of the evolutionary process, not as a precursor to it.
+
+In contrast, aspects of the genotype-phenotype mapping that fall under the umbrella of ultimate causal factors related to evolvability are not encoded in the genotype.
+They can instead be seen as implicit to the model through which the genotype is interpreted.
+The genotype-phenotype map's indirect nature is an explicit assumption as is environmental influence on the phenotype.
+A maximally biologically-plausible model would explicitly account solely for these ultimate causal factors to promote evolvability.
+The other aspects of the genotype-phenotype map would be expected to emerge as a result of the evolutionary process under the correct conditions.
+
+\subsection{Theoretical Analysis: Artificial Strategies}
+To begin to understand the role proximate factors play in relation to other causal factors, let us begin by developing an understanding of how these proximate factors fit together as a group.
+A cursory inspection reveals that this grouping of proximate factors falls into two major categories.
+Duplication and divergence, complexification, weak linkage, and the accumulation of hidden genetic variation are mechanisms that act on a population over evolutionary time (i.e. over the course of multiple generations).
+New phenotypic traits emerge from refinement of existing traits, duplication and modification of existing traits, the establishment of novel interaction between subsystems through enabling (rather than instructive) signaling, and sensitization to previously hidden accumulated genetic variation.
+Exploratory growth and developmental constraint are mechanisms that act on the phenotype during the lifetime of an individual (i.e. over the course of the developmental process).
+Components of the organism exhibit adaptivity during the developmental process, reacting to the state of other components and the developmental environment so otherwise independent phenotypic traits are synchronized.
+The nature of the developmental process governs how genotypic information manifests in the phenotype.
+
+Although the collection of concepts deemed proximate contributors to evolvability are highly diverse, they might succinctly be described as patterns of how phenotypic features emerge through the developmental and evolutionary processes.
+All of these concepts ultimately boil down to the genotype-phenotype mapping, the manner in which phenotypic information is stored in the genome.
+The intimate intertwining of the genotype-phenotype mapping and both exploratory growth and developmental constraint, which act over developmental time, can be readily appreciated.
+The connection between the proximal traits that act over evolutionary time and the genotype-phenotype mapping is a bit subtler.
+All four of these proximate contributors to evolvability --- duplication and divergence, complexification, weak linkage, and hidden genetic variation --- are related to the addition of new phenotypic information to the genome.
+Duplication and divergence leverages existing information in the genome to jump start phenotypic innovation.
+Complexification is enabled by the ability of the genome to assimilate new information describing a phenotypic trait in increasing detail.
+Weak linkage is a phenotypic adaptation --- propensity to use enabling over instructive signaling --- that reduces the amount of information that must be added to the genome to establish regulatory links between separate systems.
+Hiding segments of the genome from phenotypic expression allows for the accumulation of novel genetic information in a population that can then be exposed through sensitizing mutation.
+The manner in which phenotypic information is stored in the genotype is inherently related to the genotype-phenotype mapping, hence the connection between these concepts and that mapping.
+The Baldwin Effect sits somewhat apart from other proximate causal factors related to evolvability.
+Although it influences the genotype-phenotype mapping like other proximate causal factors, the Baldwin Effect is also tied to the phenotype-fitness mapping as it essentially performs local search in phenotypic space for fitness peaks.
+For the most part, with this slight exception, proximate causes of evolvability can be understood as acting on the genotype-phenotype mapping.
+
+As we will see in the next section, manually-designed developmental processes can exploit this relationship between proximate causes of evolvability and the genotype-phenotype mapping. These proximate causes of evolvability can be explicitly accounted for in the artificial development process (``scaffolded'' into the model).
+
+\subsection{Examples from Literature}
+Genetic representation design in evolutionary computing is typically a domain-specific endeavor.
+The manner in which a genotype-phenotype mapping is designed depends on the phenotype space it must map to. However, some design patterns do exist across domains and these are nicely exemplified by work being done in Evolving Artificial Neural Networks (EANNs).
+The goal of EANNs are to discover configurations of nodes and connective weights that cause an artificial neural network to exhibit a desired behavior.
+Scalability is a key hurdle for EANNs; evolving large artificial neural networks is difficult.
+EANNs have yet to rival neither the scale nor the intricacy of their biological counterparts and it is thought that poor genetic encoding is responsible for much of this shortcoming \cite{Tonelli2013OnNetworks}.
+
+Perhaps not surprisingly then, researchers have turned to biology to inspire new genetic encoding schemes for EANNs.
+On the more literal side of the biological inspiration coin lies Bongard and Pfeifer's artificial ontogeny (AO) system.
+In this system, the phenotype is constructed through successive duplication and differentiation of a single virtual cell modulated by simulated diffusion of chemical substances, which in turn stem from simulated genetic regulatory networks \cite[p 345]{Downing2015IntelligenceSystems}.
+Mouret et al.'s map-based encoding occupies a middle ground in terms of literal interpretation of biological inspiration.
+Styled after models of the Basal Ganglia developed by neuroscientists, the map-based model jettisons the individual neuron as the fundamental unit of network composition.
+Instead, layers each consisting of an arbitrary number of neurons, which are strung together by several pre-defined regular connection schemes (i.e. one to one or one to all), are taken as the fundamental unit of network composition \cite{Mouret2010ImportingGanglia}.
+
+HyperNEAT, a highly influential and ubiquitous encoding in evolutionary computing, lies on the reverse side of the biological inspiration coin --- it exhibits highly abstracted biological inspiration.
+HyperNEAT is built off the NEAT encoding scheme developed by Stanley and Miikkulainen \cite[p 324]{Downing2015IntelligenceSystems}.
+NEAT is a direct, variable-length encoding for neural networks that reduces omissions and redundancies introduced during crossover by tracking historical markers associated with each gene, in essence implementing a rough approximation of synapsis during meiosis.
+HyperNEAT repurposes NEAT to encode a Compositional Pattern Producing Network (CPPN) instead of encoding a neural network.\footnote{
+A CPPN is a weighted network of nodes, each of which performs a transformation on its inputs to generate an output --- essentially a neural network where nodes may perform transformations other than the logistic equation. The CPPN at its core is just a mathematical expression that accepts several inputs and generates several outputs.}
+The weight of the connection between two nodes in the neural network generated by HyperNEAT is determined by the output of the CPPN fed the coordinates of those two nodes.
+The CPPN in essence serves as the genotype in the HyperNEAT scheme.
+The activation patterns projected onto the substrate occupied by artificial neurons in the HyperNEAT scheme by the CPPN are analogous to patterns of chemical diffusion that play a key role in directing embryological development \cite[p 339]{Downing2015IntelligenceSystems}.
+In the original HyperNEAT concept, artificial neurons were arranged in a simple grid pattern.
+Subsequent efforts have been made to implicitly define neuron placement based on CPPN output, allowing for the network to grow in numerical size over evolutionary time \cite{Risi2010EvolvingSubstrate,Risi2010IndirectlyRules}.
+
+Although great strides have been made in developing representational techniques, allowing effective EANNs of much larger scale than before, a lot of ground remains to be covered.
+EANNs still fall short of the scale exhibited by biological neural networks.
+
+\section{Selection} \label{sec:selection}
+
+\subsection{Theoretical Analysis: Biologically-Motivated Strategies}
+
+Under the proximate-intermediate-ultimate organizational framework, identifying biologically-motivated strategies to promote evolvability by acting on the phenotype-fitness mapping is straightforward.
+Any ultimate causal factors related to selection can serve as the basis for such a biologically-motivated strategy.
+Temporally varying goals and fitness degeneracy explicitly describe aspects of the fitness function --- its fluctuation over evolutionary time and its tolerance of phenotypic diversity.
+Although environmental influence on the phenotype acts on the genotype-phenotype mapping it can also be seen as related to the phenotype-fitness mapping as it can relay information about the phenotype-fitness mapping --- namely, which phenotypic outcome would be favored in terms of fitness.
+
+\subsection{Theoretical Analysis: Artificial Strategies}
+
+Although ultimate causal factors related to selection provide biologically plausible strategies to promote evolvability, intermediate causes of evolvability can provide means to promote evolvability that depart from strict adherence to the biological metaphor.
+Intermediate causal factors include modularity, canalization, robustness, individual evolvability, intraindividual degeneracy, and interindividual degeneracy.
+In nature, these intermediate contributors to evolvability are also qualities gained by evolving organisms through the evolutionary process, not built a priori into an evolving system.
+In concrete terms, this means that these traits would be essentially absent in a randomly generated population at generation zero but might develop as evolution proceeds under the right conditions.
+Intermediate causal factors tend to be less prone to direct manual instantiation compared to their proximate cousins because intermediate causal factors are largely not explicit components of the developmental process.
+However, that does not mean that intermediate causal factors are ill-defined or unobservable.
+Especially in digital organisms, these traits can be directly quantified (usually in the context of a single individual).
+Reisinger et al. quantify canalization by measuring the rate at which random mutation degrades fitness \cite{Reisinger2007AcquiringRepresentations}.
+A domain-specific metric for modularity has been developed by \cite{Kashtan2005SpontaneousMotifs}.
+The ability to quantify these traits associated with intermediate causality allows direct selection for them.\footnote
+{It should be noted that intraindividual degeneracy, which manifests in differences between individuals rather than within a single individual, is slightly different from the other listed intermediate contributors in this regard.
+However, selection to directly promote intraindividual degeneracy might nonetheless be possible by divergent selection to reward novel neutral phenotypic and/or genotypic variation.}
+That is, individuals that exhibit a desirable trait related to evolvability, such as modularity or intraindividual degeneracy, could be explicitly chosen to populate the next generation. The hope would be to observe these traits become more prevalent over evolutionary time.
+
+\subsection{Examples from Literature}
+In biological evolution, selection criteria are neither monolithic nor static.
+Although single-objective, static selection is perhaps the most intuitive strategy to use in an evolutionary algorithm at first blush, such a selection scheme constitutes a rather simplistic interpretation of the biological metaphor.
+A number of recent efforts have leveraged inspiration from selection in biological evolution to great effect.
+Researchers have ventured away from static, objective-based selection by employing temporally varying goals, selection criteria that change over evolutionary time.
+This selection paradigm in evolutionary computing, reviewed in Section \ref{sec:tvg}.
+Inspired by the abundance of niches in biological environments, Ngyuen et al. performed experiments considering the possibility of evolving towards several objectives at once.
+They found that, compared to evolving towards a single objective, defining a large set of fitness criteria and determining selection based on the maximum fitness score obtained under one of those criteria, yielded better quality solutions for each objective \cite{Nguyen2015InnovationLearning}.
+In their computational experiment, Ngyuen et al. observed objective switching, where offspring are better suited to a niche distinct from that occupied by their parent, occur at a significant rate.
+Mengistu et al. have hypothesized that this niche-inspired approach encourages individual evolvability by rewarding individuals with offspring that are  phenotypically variable enough to jump between objectives \cite{Mengistu2016EvolvabilityIt}.
+
+As suggested in the analysis performed at the open of this section, researchers have also identified several successful selection strategies that depart from strict adherence to the biological metaphor.
+Highly notable among these is novelty search.
+This selection scheme discards traditional objective-based metrics in favor of selecting for individuals that are the most novel, that are the most distinct from individuals that have already been encountered during evolutionary search \cite{Lehman2008ExploitingNovelty}.
+Although not directly consistent with the biological metaphor, it has been suggested that such an approach captures aspects of the open-ended nature of biological evolution in ways that other selection schemes fail to do.
+This strategy occupies a gray area between biologically plausibility and artificiality.
+Surprisingly enough, it has been found that in certain scenarios jettisoning selection for an objective in favor of searching for novelty (and keeping track of the best-performing solutions encountered along the way) can actually lead to better performance in satisfying that objective \cite{Lehman2008ExploitingNovelty}.
+Novelty search has been found to promote evolvability: selecting for novelty rewards individuals that create variable offspring \cite{Lehman2011ImprovingSelf-Adaptation}.
+
+More recently, Mengistu et al. demonstrated a scheme where individual evolvability is directly selected for  \cite{Mengistu2016EvolvabilityIt}.
+This scheme selects on the characteristics of an individual --- in this case, the ability to generate phenotypic variation among offspring).
+Thus, it exemplifies the avenue to promote evolvability provided by direct selection for intermediate causes of evolvability.
+Like novelty search, this selection scheme ignores objective performance when performing selection.
+Instead, individuals that create a set of offspring that exhibit the greatest phenotypic diversity amongst siblings are selected for.
+Also like novelty search, the best-performing individuals according to the objective function are simply logged along the way.
+Although subtle, it is an important point to that these two objective-bucking strategies are not random search. Individuals are instead selected for based upon criteria --- either individual evolvability or novelty --- that specifically aim to facilitate wide-ranging search.
+It is in the course of these wide-ranging journeys through phenotype space that these search strategies encounter solutions that well satisfy the objective.
+
+\section{Synthesis} \label{sec:synthesis}
+Our analysis of strategies to promote evolvability has been divided between the two major components of the evolutionary algorithm: the genotype-phenotype mapping (development) and the phenotype-fitness mapping (selection). The proximate-intermediate-ultimate framework has shed light on strategies targeting both mappings, in particular how each can be accomplished both inside and outside of strict adherence to the biological metaphor. Possible strategies to promote evolvability can be summarized as:
+\begin{itemize}
+\item taking a broader view of selection
+\begin{itemize}
+\item more open-ended environments that exhibit fitness degeneracy and temporal fluctuations (ultimate causes of evolvability)
+\item non-objective-based selection mechanisms (such as selection for intermediate causes of evolvability)
+\end{itemize}
+\item adopting a more nuanced view of the developmental process
+\begin{itemize}
+\item allowing for a more biologically plausible developmental process that incorporates environmental influence on the phenotype and allows a high level of genetic control of the developmental process (relying on ultimate causes of evolvability)
+\item manually building scaffolding for the developmental process to incorporate aspects of proximate contributors to evolvability at a feasible computational cost (scaffolding proximate causes of evolvability)
+\end{itemize}
+\end{itemize}
+Since the conception of the field of evolutionary algorithm design efforts under each of these banners have already had transformative effects on the field. Such efforts are reviewed next in Sections \ref{sec:development} and \ref{sec:selection}.
+
+At first blush, it very well might seem that these efforts to apply a broader, more nuanced view of evolution to the evolutionary algorithm amount to abandoning practical applications of the evolutionary algorithm.
+After all, these first components of the path forward for evolutionary computing entail moving away from exclusively selecting for the ability of a digital organism to fulfill a desired function.
+The second involves incorporation of more nuanced developmental processes, efforts that might not seem to directly relate to the ability of a mature phenotype to serve a desired function and instead merely appear to be an extravagant pretense to biological realism where ``the complexity of the model dwarfs that of the task...'' \cite[p 354]{Downing2015IntelligenceSystems}.
+However, the exact opposite is the case --- these efforts aim to unlock the power of evolutionary innovation, so that it may be better harnessed for applied ends.
+Indeed, these ideas have been adopted in applied scenarios where greater task performance is desired and have yielded it \cite{Cheney2013UnshacklingEncoding, Mengistu2016EvolvabilityIt, Reisinger2007AcquiringRepresentations, Lehman2008ExploitingNovelty}.
+The central question that evolutionary algorithms researchers confront seems to be: at what level of abstraction can a biologically-inspired route to profound and useful innovation via evolution be realized?
+At the heart of the matter, evolutionary algorithm researchers are challenged to sort out what biological factors are important to the evolutionary process.
+As our analysis with the proximate-intermediate-ultimate framework reveals, strict adherence to biological plausibility (i.e. ultimate causal factors) is not necessary to promote evolvability.
+It is possible to act on the genotype-phenotype mapping by scaffolding proximate causes of evolvability and to act on the phenotype-fitness mapping by selecting for intermediate causes of evolvability.
+Such clever adjustments to the evolutionary model allow for the acquisition of evolvability without undue computational cost of a naive, exclusively biologically plausible approach.
+The path forward for evolutionary computing will depend heavily on continued rigorous experimental work to suss out the constellation of causality behind evolvability in biological systems and digital models.
+It is hoped that this experimental work, guided and motivated by theoretical analysis, will ultimately yield stronger methodological techniques to promote evolvability in digital systems and, thus, continue to advance the practical utility of evolutionary algorithms in applied settings.

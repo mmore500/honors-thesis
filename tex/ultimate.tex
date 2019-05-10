@@ -1,0 +1,108 @@
+\chapter{Ultimate Causes of Evolvability} \label{sec:ultimate}
+
+Establishing the ultimate cause of a phenomenon can easily devolve into a fraught and ill-defined endeavor. A bicycle rider noticing decreasing return on her pedaling effort would very well wonder what is wrong with the bike. Perhaps the tire is flat. Why is the tire flat? Perhaps a shard of glass punctured it. Why? Perhaps the biker's commute goes through a derelict neighborhood. Why? The answer to that question lies somewhere in urban history and zoning ordinance. This process could be continued. Often, there is no clearly defined top rung on the ladder of causality. Instead, causal hypotheses become increasingly obscure, eventually escaping the realm of science and slipping into that of philosophy or religion. Practical considerations can help to resolve this dilemma by informing a clear point at which to stop climbing and declare an ultimate cause. In terms of our biker, the route of her commute provides a clear avenue for intervention. Perhaps she should avoid biking through that seedy district.
+
+Similar practical considerations inform organization of this section.
+High level causal factors that might be practically employed to promote evolvability in evolutionary computing were included.
+These causal factors frequently act by promoting the traits discussed in Chapter \ref{sec:intermediate} that manifest in the proximal causes, phenotypic characteristics observed in biological organisms, presented in Section \ref{sec:proximate}. While the contents of this section might hold the greatest direct practical relevance to researchers seeking to promote evolvability in artificial systems, it should not be viewed as a comprehensive listing of approaches to promoting evolvability in those systems. As will be overviewed in Chapter \ref{sec:discussion}, some techniques devised by evolutionary computing researchers do not have a direct analog in nature, although many are inspired by the principles of nature's evolvability-promoting toolbox. Hopefully, this vantage on the roots evolvability, although inspired by the practical considerations of evolutionary computing, by considering how certain fundamental characteristics of biology promote evolvability will also prove satisfying to the biologically-motivated reader.
+
+\section{Indirect Encoding} \label{sec:indirect-encoding}
+\subsection{Definition}
+The phrase indirect encoding describes the relationship between the genotype and the phenotype. In an indirect encoding, a one-to-one direct correspondence is not guaranteed between each phenotypic characteristic and a single entry in the genotype. The opposite of an indirect encoding is a direct encoding. In a direct encoding, each and every phenotypic characteristic is independently described by a single entry in the genotype.
+
+Indirect encodings can be broken down into two categories: expanded and generative. In an expanded indirect encoding, a one-to-one relationship exists between information in the genotype and in the phenotype, but the encoding lacks independent control of each phenotypic characteristic by a single genotypic entry. That is, altering one piece of genetic information can affect multiple phenotypic characteristics. In a generative indirect encoding, the one-to-one relationship between phenotypic characteristics and genetic information is relaxed. Such an indirect encoding is deemed generative because, typically, a large number of phenotypic characteristics are generated from a smaller amount of genetic information via a developmental process \cite[p 175]{Downing2015IntelligenceSystems}.
+
+\subsection{Relation to Evolvability}
+
+Generative indirect encodings are generally biased towards phenotypic regularity (Section \ref{sec:regularity}) because phenotypic information is generated from a smaller amount of genetic information. Developmental processes may allow for genetic information to be reused to describe different characteristics of the phenotype in a systematic manner  \cite{Clune2011OnRegularity}. Thus, phenotypic patterns --- e.g. regularity --- tend to be observed. Experiments by \cite{Cheney2013UnshacklingEncoding} with soft bodied robots illustrate this point elegantly. Virtual soft-bodied robots evolved for locomotion using an indirect encoding based on Compositional Pattern Producing Networks display greater regularity than their directly encoded peers, manifesting in the robots as large contiguous patches of identical tissue type. Figure \inputandref{direct_irregular_vs_indirect_regular}, which compares representative direct encoded and indirect encoded champions, illustrates the impact of indirect encodings on regularity.
+
+\subsection{Example}
+In biology, phenotypic information is indirectly encoded in DNA. The genotype of an organism is translated into its phenotype via the developmental process. The indirect relationship between phenotypic and genotypic information is universal in biology; heritable information in the genotype is translated into phenotypic characteristics through the production of proteins and other gene products.
+
+Figure \inputandref{dna_encoding} provides a cartoon example of this indirect encoding in biology, comparing the genotype and phenotype of an elephant.
+
+Quantifying the amount of phenotypic information in an elephant is a nontrivial task. However, the claim that a cell constituting the elephant contains more information than a single base pair should be noncontroversial. As the number of cells constituting an elephant far outstrip the number of base pairs in its genome, the elephant also nicely illustrates the disequilibrium between phenotypic characteristics and genotypic information enabled by indirect encoding. As would be expected, regularity is observed on many phenotypic aspects of the elephant, from its bilateral symmetry to the repeated occurrence of many near-identical proteins and cellular structures in each of the trillions of cells throughout the elephant. \cite{Clune2011OnRegularity} offer a similar comparison, perhaps a little closer to home, pointing out that in humans 25 000 genes describe a phenotype consisting of trillions of cells.
+ 
+These two examples comparing genetic information to phenotypic characteristics in massively multicellular creatures might seem overly convenient. Unicellular creatures, for example, do not afford such a stark observation. Like elephants, quantifying the number of phenotypic characteristics of a protozoa or a bacteria is a nontrivial task. Despite their minuscule stature, these creatures do exhibit many phenotypic characteristics. However, a convincing argument that the amount of phenotypic information exceeds the amount of genetic information would be difficult to make. In any case, these creatures, which rely upon the same fundamental translation of genotypic information to phenotypic characteristics through gene products, nevertheless also lack a direct one-to-one correspondence between genetic information and phenotypic characteristics and, thus, are indirectly encoded. Like their multicellular counterparts, unicellular creatures exhibit phenotypic regularity.
+Such regularity might manifest in, for example, repeated occurrence of identical or near-identical functional subunits (i.e. many identical proteins, ribozymes, etc.).
+
+\section{Temporally Varying Goals} \label{sec:tvg}
+\subsection{Definition}
+Most biological organisms do not evolve in a static environment. Instead, their environment changes over evolutionary time. These changes might be due to geophysical factors, such as changes in the climate or the geological composition of an area. These changes might also be due to biological factors, through evolutionary changes in the organisms with which they cooperate, compete, or otherwise interact. Thus the fitness-related goals of these organisms --- that is, the specifications that they must meet in order to succeed --- are temporally varying.
+
+\subsection{Relation to Evolvability}
+
+Evolutionary simulations have revealed that gradual changes to the environment  --- that is, a temporally varying fitness function --- promote desirable characteristics related to evolvability including robustness, modularity, and individual evolvability \cite{Kashtan2007VaryingEvolution, Wilder2015ReconcilingEvolvability}. It is thought that a gradually shifting fitness function might induce evolutionary pressure for these traits, essentially providing a means of selecting for them. 
+
+Robustness would be essential in a temporally varying goals scheme, allowing to persist under environmental conditions different from those of their ancestors. Similarly, modularity, which allows for the repurposing of evolved units of functionality and reduces the impact of changes in one aspect of functionality on other aspects of functionality, would also prove useful in responding to evolutionary pressure for constant, gradual adaptation to changing environmental conditions. Kashtan et al. point out that modularity is a particularly important trait because, throughout changes in environmental conditions, the necessity for many aspects of functionality is preserved.
+
+\begin{displayquote}
+On the level of the organism, for example, the same subgoals, such as feeding, mating, and moving, must be fulfilled in each new environment but with different nuances and combinations. On the level of cells, the same subgoals such as adhesion and signaling must be fulfilled in each tissue type but with different input and output signals. On the level of proteins, the same subgoals, such as enzymatic activity, binding to other proteins, regulatory input domains, etc., are shared by many proteins but with different combinations in each case \cite{Kashtan2007VaryingEvolution}.
+\end{displayquote}
+
+In fact, phenotypic modularity has been observed to emerge spontaneously in artificial evolution experiments performed with a temporally varying fitness function \cite{Kashtan2007VaryingEvolution}.
+
+Finally, under a temporally varying goals regimen, individuals that are predisposed to yielding variable offspring are advantaged over individuals that do not. Although much of that variation is likely not to be useful, some of it is likely to be and will allow to exert dominance over individuals without fresh adaptation to the changing environmental conditions. As Wilder, et al. put it, ``if selection sets a moving target, individuals will be more likely to introduce variation in their offspring to adapt to an uncertain future; mutations to the genotype will be more likely to result in phenotypic change'' \cite{Wilder2015ReconcilingEvolvability}. By inducing a selective pressure for individuals capable of generating relatively swift adaptive change to track changing environmental conditions, temporally varying goals promote a number of essential traits related to evolvability.
+
+\subsection{Example}
+
+Let us discuss a hypothetical population  of hummingbirds that feed on purple flowers.
+Suppose that in order to successfully feed, hummingbird beak lengths must match the length of their food source --- beaks can be neither too short nor too long or the hummingbird will be unable to feed effectively.
+Suppose also that the lengths of the purple flowers on which the hummingbirds depend were to be systematically manipulated over evolutionary time, proceeding through cycles of gradual increase and decrease.
+Under this scheme, individuals whose offspring exhibit greater variability in beak length would be favored.
+Figure \inputandref{hummingbird_selection_pressure} contrasts the offspring of an individual that exhibits low individual evolvability in relation to beak length and an individual that exhibits higher individual evolvability in relation to beak length.
+A greater diversity of beak lengths are observed among the offspring of the hummingbird with high evolvability.
+Although many beak length outcomes among offspring of a hummingbird that exhibits high individual evolvability will be deleterious, some fraction will be adaptive to changes in purple flower length.
+If selection is strong enough, the offspring will enjoy high fitness compared to other members of its generation.
+Hence, individual evolvability will be selected for.
+
+As discussed in the previous subsection, temporally varying goals are thought to promote a slew of causal factors related to evolvability. In the context of our hummingbird example, one might expect to observe
+\begin{itemize}
+\item increased variability in beak length between siblings (i.e. individual evolvability),
+\item increased segregation of developmental processes that determine beak length from other developmental processes (i.e. modularity), and/or
+\item greater ability of the hummingbird to persist with limited nutritional resources (i.e. robustness)
+\end{itemize}
+among hummingbirds evolved in a temporally varying environment compared to a population of hummingbirds that exist in a static environment.
+
+\section{Environmental Influence on Phenotype}
+
+\subsection{Definition}
+
+The mantra $P = G + E$, stating that phenotype is a product of both genotype and environment, has come to be universally accepted among biologists. On a basic level, it is clear that, because biological organisms do not exist in a vacuum, they are physically influenced by their environments. Temperature, chemical substances, electromagnetic radiation, and other external physical phenomena directly act upon biological organisms.
+
+\subsection{Relation to Evolvability}
+
+Environmental influence on the phenotype is included as an ultimate cause of evolvability because of an idea that is a bit more subtle: that these environmental factors might play an important role in the evolutionary process. Environmental influence on the phenotype can be divided into two major categories: disruptive noise and information. That is, certain aspects of the physical interaction of an organism with its environment can be considered as disruptive perturbations that an organism must be robust to. This type of environmental influence is related to direct plasticity, an intermediate causal factor presented in \ref{sec:direct_plasticity}. Other aspects of the physical interaction of an organism with its environment might be considered as providing information to the organism that it can exploit in order to increase its fitness. This type of environmental influence is related to indirect plasticity, another intermediate causal factor presented in \ref{sec:indirect_plasticity}.
+
+\subsection{Example}
+
+Himalayan rabbits provide a charismatic example of environmental influence on the phenotype. These rabbits carry a gene that produces melanin, giving their fur a brown color. However, this gene is only active at temperatures significantly below body temperature so the brown coloration is typically only observed on the outer extremities of the rabbit. If a Himalayan rabbit is reared at a temperature above the threshold for melanin creation, however, the gene will be inactivated throughout the rabbits body and a pure white phenotype will be observed \cite{Lobo2008EnvironmentalExpresssion}.
+
+\section{Fitness Degeneracy}
+
+\subsection{Definition}
+I define fitness degeneracy as the ability of divergent strategies for reproduction and survival to succeed in a particular environment.
+From an evolutionary computing perspective, a fitness function would be considered to exhibit fitness degeneracy if a set of functionally different phenotypes can all attain high fitness.
+This concept roughly corresponds to the idea of biological niches, but considers the ability of different strategies for reproduction and survival to succeed within a population (as opposed to between species).
+
+\subsection{Relation to Evolvability}
+By allowing for functionally divergent phenotypes to succeed, fitness degeneracy promotes the accumulation of diversity within a population. This diversity broadens the range of phenotypic forms that are accessible to the offspring of a population, thus promoting population evolvability . The coexistence of speciated populations within the same ecosystem that exploit radically different strategies to earn their metabolic keep
+can also be seen as fitness degeneracy. This degeneracy, the ability of radically different fitness strategies to coexist within the biosphere, has vastly expanded the breadth of phenotypic form explored by evolution.
+\begin{displayquote}
+ A related approach is to set a vast number of separate, diverse evolutionary objectives, which approximates the infinite number of niches created by the ever-changing natural world.  Such optimization leads to frequent goal-switching, as lineages fit on one objective invade other objectives, which rewards lineages that produce behaviorally diverse offspring and increases evolvability
+\cite{Mengistu2016EvolvabilityIt}
+\end{displayquote}
+
+\subsection{Example}
+The male mating patterns of \textit{Uta stansburiana}, a lizard found in the coast range of California, illustrates fitness degeneracy --- how different strategies stemming from phenotypic diversity can be successful in terms of fitness.
+Male \textit{Uta stansburiana} are found in three morphs: orange, blue, and yellow \cite{Sinervo1996TheStrategies}.
+The orange morph is characterized as ``hyper-masculine.''
+It staunchly defends its territory and will battle male trespassers.
+Lizards of the yellow morph are ``sneakers.''
+They pass themselves off as females to get past other males.
+The blue morph is described as the ``mate-guarding'' morph.
+Blue morph lizards are more circumspect to combat and not as easily deceived by interloping yellow morphs.
+Figure \inputandref{lizards} provides a visual overview of how these morphs interact.
+Much like the game of rock, paper, scissors, each morph outcompetes one morph and is itself outcompeted by another morph.
+No single phenotypic strategy is favored by the environment.
+Although their strategies for survival and reproduction vary greatly, each lizard morph can be successful.

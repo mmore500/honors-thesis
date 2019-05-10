@@ -1,0 +1,40 @@
+\usepackage[a4paper, total={6.5in, 9.5in}]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage[compatibility=false]{caption}
+\usepackage{subcaption}
+\usepackage[rightcaption]{sidecap}
+\usepackage[toc]{glossaries}
+\makeatletter
+\usepackage[nonewpage]{imakeidx}
+\def\imki@putindex#1{%
+  \ifimki@nonewpage\else
+    \imki@clearpage
+%%% The following two lines are incorrectly switched in the package
+    \immediate\closeout\csname #1@idxfile\endcsname
+  \fi
+  \let\imki@indexname\indexname % keep \indexname
+  \@nameuse{imki@set@#1}\imki@decide
+  \if@tempswa % we can call the external program
+    \imki@exec{\imki@program\imki@options#1.idx}%
+  \else
+    \imki@finalmessage{#1}%
+  \fi
+  \ifKV@imki@intoc
+    \def\imki@maybeaddtotoc{\@nameuse{phantomsection}%
+      \addcontentsline{toc}{\imki@toclevel}{\imki@title}}%
+  \else
+    \def\imki@maybeaddtotoc{}%
+  \fi
+  \ifx\imki@title\imki@check@indexname\else
+    \def\indexname{\imki@title}%
+  \fi
+  \@input@{#1.ind}
+  \let\indexname\imki@indexname % restore \indexname
+}
+\makeatother
+\usepackage{idxlayout}

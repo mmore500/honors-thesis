@@ -1,0 +1,90 @@
+\chapter{Approaches to Increasing Evolvability} \label{subsec:approaches_to_promoting_evolvability.tex}
+
+As we have seen in Sections \ref{sec:definition}, \ref{sec:concepts_related_to_evolvability}, and \ref{sec:biological_perspective_on_evolvability}, evolvability is a diffuse concept with multiple causality. No single factor determines evolvability. This section will begin with an analysis of the factors promoting evolvability that, in particular, identifies potential avenues for intervention in EANN. Then, work by EANN researchers to promote evolvability will be presented. This work, for the most part, falls into two categories: toying with how evolutionary selection takes place and toying with the genotypic representation of candidate solutions.
+
+\section{Discussion of Concepts Related to Evolvability}
+As can be seen in figure \ref{fig:mindmap}, evolvability stems from a large cluster of largely interlinked concepts. Let us take a closer look at sub-components of this nexus of causality. Figure \inputandref{mindmap_analysis} features several diagrams to aid this analysis. 
+
+Figure \ref{subfig:heritable_variation} highlights concepts that promote heritable variation, one of the two primary aspects of evolvability. Temporally varying goals, plasticity, and degeneracy appear to be important concepts that promote heritable variation. Figure \ref{subfig:useful_variation} highlights concepts that promote useful variation, the other primary aspect of evolvability. Complexification, regularity, and canalization seem to be the most proximal causes of evolutionary bias towards useful variation. robustness, plasticity, modularity, individual degeneracy, and temporally varying goals contribute indirectly to evolutionary bias towards useful variation.
+
+In analyzing concepts that promote evolvability, it is also useful to isolate concepts that provide an avenue for intervention by the EANN researcher. While many of these concepts could be directly selected for (as in ``Evolvability Search: Directly Selecting for Evolvability in order to Study and Produce It'' \cite{Mengistu2016EvolvabilityIt}), temporally varying goals, environmental influence on phenotype (plasticity), and fitness degeneracy provide direct routes for intervention to promote evolvability. These concepts, which are related to both the promotion of useful variation and heritable variation, are highlighted in Subfigure \ref{subfig:mindmap_external}.
+
+Finally, Figure \ref{subfig:mindmap_indicators} highlights concepts related to evolvability that might be gained through the evolutionary process (i.e. would not be present in generation 0, but might develop as evolution proceeds) and manifest as quantifiable traits at the individual level. These concepts are modularity, canalization, robustness, individual evolvability, and individual degeneracy. These concepts might allow assessment of evolvability gained during the evolutionary process at the individual level. These concepts are connected to both facets of evolvability --- useful variation and heritable variation. Population degeneracy and population evolvability, which are related only to heritable variation, might provide a quantifiable window into evolvability gained during the evolutionary process at the population level.
+
+As Figure \ref{fig:mindmap} reminds, many factors promote evolvability. It seems that only through a constellation of intervention efforts will a level of evolvability on par with natural systems. In particular, close theoretical analysis of evolvability suggests that an  open-ended, nuanced fitness-determining and developmental environments may be necessary to reach high levels of evolvability. The importance of interindividual degeneracy, fitness degeneracy, and temporally varying goals in promoting evolvability speaks to the necessity of an open-ended fitness determining environment where a multiplicity phenotypic forms can express identical or near-identical functionality, where a multiplicity of phenotypic functionalities can attain high fitness, and where a dynamic fitness function rewards evolutionary adaptability. The importance of intraindividual degeneracy, plasticity, and exploratory growth suggests that a nuanced developmental environment and internal organismal dynamics may be necessary to allow for a multiplicity of phenotypic substructures to exhibit common functionality, to force the organism to counteract perturbation from the environment during the developmental and adult life stages, and to allow for self-organizing developmental dynamics.
+
+On the surface, these imperatives put Evolving Artificial Neural Networks at an awkward crossroads between applied machine learning and artificial life (Alife). Downing refers to route, viewing intelligence as an emergent phenomena that arises from the interactions of a large number of simple computational units, as the ``low road'' towards intelligence \cite[pg 19]{Downing2015IntelligenceSystems}.  While this may seem to be an undesirable no-man's land, Downing advocates convincingly for its potential. Beyond that, though, in my opinion, the situation of EANN between applied machine learning and Alife really is the most interesting part of the field. The central question that EANN researchers confront seems to be: at what level of abstraction can an emergence-centered, biologically-inspired route to intelligent behavior via evolution be realized? 
+
+Clearly, modeling the brain at the level of chemical interactions between individual molecules is neither nor, one would hope, necessary to observe the desired properties of the brain. Downing refers to these pitfalls, where ``the complexity of the model dwarfs that of the task...'' as ``flashing caution signs along the low road to AI.'' He notes that ``Many aspects of neurobiology have been left out of EANNs, but justifiably so. The computational costs of detailed simulations often fail to pan out. '' \cite[pg 354]{Downing2015IntelligenceSystems} Clearly, naive models that focus primarily on attaining biological realism --- although perhaps still interesting from a scientific perspective --- will not yield the applied performance sought after by EANN researchers.
+
+Nevertheless, it may prove necessary to incorporate some of the of Alife into algorithms in order to get good performance. For example, it is clear that nuanced, even non-static, fitness criteria and genotype-phenotype mappings play essential roles in evolving systems. These biological realities cannot be abstracted away without significantly impacting the performance of the evolutionary process. As discussed in Sections \ref{sec:divergent_selection} and \ref{sec:indirect_encodings}, the performance of EANN have been greatly advanced by incorporating these nuances into EANN models through, for example, the HyperNEAT encoding and Novelty Search. This is the central challenge of EANN: sorting out what biological factors are important to the evolutionary process and devising clever ways to model them without the undue computational cost of a naive Alife approach. This theme will run through the rest of this section, which presents a sampling of the myriad algorithmic approaches to promote evolvability in EANN. This theme will also appear in Section \ref{sec:experiment}, where the potential role of plasticity --- environmental influence on the phenotype --- is hypothesized as a potential factor promoting evolvability and an experiment design to test that hypothesis is laid out. It is hoped that this kind of theoretical and experimental work will ultimately yield methodological techniques, like those presented in this section, to promote evolvability in EANN and, thus, continue to push forward their practical utility in applied settings. 
+
+
+% \begin{displayquote}
+% Unfortunately, the use of exploratory growth in EANNS seems to generate more questions than answers. Chief among these are the following:
+% \begin{itemize}
+% \item What is the proper abstraction level at which to model neural network topology formation?
+% \item Should development and learning occur in lockstep or with overlap?
+% \item What are the relative influences of the genome versus the environment during development?
+% \item If the environment supplies signals during development, are these any different than the stimuli that drive learning?
+% \end{itemize} \cite{Downing2015IntelligenceSystems}
+% \end{displayquote}
+
+% \begin{displayquote}
+% The idiosyncrasies of the human brain should therefore be viewed as fascinating mechanisms for achieving intelligence but certainly not as prerequisites for all forms of sophisticated thought. The author's confidence in the bottom-up approach stems not from these large-scale aspects of neuroanatomy but from the general intuition that a neural substrate, or some similar network of relatively simple, interconnected processors, is the most effective for the representations and information processing that underlie intelligence. The brains of extant organisms are simply enlightening illustrations of anatomical scaffolding that supports the emergence of mind from the interactions of basic computational units \cite[pg 11-12]{Downing2015IntelligenceSystems}
+% \end{displayquote}
+
+\section{Representations}
+
+\subsection{Complexification}
+  \begin{itemize}
+    \item ``The indirect encoding in this paper is motivated by a key concept from developmental biology. Nature builds complex organisms by producing increasingly complex geometric coordinate frames, and then determining the fate of phenotypic elements as a function of their location within such frames. This process produces phenotypes with regularity, modularity, and hierarchy, which are beneficial design principles'' \cite{Clune2011OnRegularity}
+    \item ``direct encodings like NEAT can complexify ANNs over generations by adding new nodes and connections through mutation... ES-HyperNEAT is able to elaborate on existing structure in the substrate during evolution'' \cite{Risi2010EvolvingSubstrate}
+  \end{itemize}
+
+\subsection{Indirect Encodings} \label{sec:indirect_encodings}
+  \begin{itemize}
+    \item Figure \ref{fig:direct_irregular_vs_indirect_regular} illustrates the bias towards regularity that is induced by indirect genetic encoding.
+  	\item NEAT \cite[p 324]{Downing2015IntelligenceSystems}
+    \item HyperNEAT \cite[p 339]{Downing2015IntelligenceSystems}, with CPPN as illustrated by \inputandref{indirect_bias}
+    \item Iterated ES HyperNEAT \cite{Risi2011EnhancingNetworks}
+    \item adaptive HyperNEAT \cite{Risi2010IndirectlyRules}
+    \item Mouret's neuroscience-based model ``many neuroscience models rely on the concepts of maps(a N by M grid of neurons, in which N and M are free variables of the model) connected by regular connection schemes (either one to one connections or one to all with a regular assignation of  weights). This allows such neural  networks to scale up to larger maps (e.g. to handle higher-dimensional inputs) while maintaining the same overall structure. '' \cite{Mouret2010ImportingGanglia} 
+    \item computationally-heavy A-Life approaches (one extreme in the spectrum) such as Bongard and Pfeifer artificial ontogeny (AO) system \cite[p 345]{Downing2015IntelligenceSystems}
+    \item other, ``historical'', approaches: cellular encoding \cite[p 334]{Downing2015IntelligenceSystems}, L system grammars like G2L \cite[p 335]{Downing2015IntelligenceSystems}
+    \item allows EA to ``scale up'' to large networks
+    \item  ``biological nervous systems are much larger, much more organized, much more plastic and, overall, much more complex. It is commonly believed that the key for understanding the evolution of  large and organized neural networks is the developmental process that links genes to nervous systems.'' \cite{Tonelli2013OnNetworks}
+    \item ``indirect encodings (also known as generative or developmental encodings), wherein information in the genome can be reused to affect many parts of the phenotype.'' \cite{Clune2011OnRegularity}
+    \item ``We here propose that this bias towards regularity is critical to evolve plastic neural networks that can learn in a large variety of situations'' \cite{Tonelli2013OnNetworks}
+    \item spandrel --- phenotypic characteristic that is a byproduct of evolution of some other charactersitic, not a direct product of adaptive selection (regularity/symmetry encourages these) $\rightarrow$ allow for more general learning abilities \cite{Tonelli2013OnNetworks}
+    \item example ``The HyperNEAT gaits are all regular. They feature two separate types of regularity: coordination between legs, and repetition of the same movement pattern across time.The first type has four-way symmetry, wherein each leg moves in unison and the creature bounds forward repeatedly. This gait implies that HyperNEAT is reusing neural information in a regular way to control all of the robot’s legs.'' \cite{Clune2011OnRegularity}
+  \item ``Reusing genetic information also facilitates scalability. With indirect encodings, evolution can search in a low-dimensional space yet produce phenotypes with many more dimensions. For example, only about 25 000 genes encode the information that produces the trillions of cells that make up a human.'' \cite{Clune2011OnRegularity}
+  \end{itemize}
+  
+  \subsection{Genetic Regulatory Networks (GRNs)}
+  \begin{itemize}
+    \item ``Without regulation, every functional gene would presumably be ubiquitously expressed (or vestigial), and new phenotypes would require the addition of new functional genes. The presence of regulatory genes provides an exponential number of possible phenotypes from the same set of functional genes, some of which may be on (expressed) and others repressed at any particular time in evolution or any spatiotemporal point in development'' \cite[p 220]{Downing2015IntelligenceSystems}
+    \item ``Encodings based on GRNs and developmental systems allow for this kind of adaptation implicitly through overlapping gene expression domains: (1) Weak linkages allow mutations to affect both fundamental and fine tune-tuned structure, (2) Expression domains can be easily copied between genes, and (3) Upstream mutations can shift expression domains. These mechanisms are powerful precisely because search becomes constrained, generating only highly adaptive phenotypes.'' \cite{Reisinger2007AcquiringRepresentations}
+    \item ``... increasing the points in ontogeny at which change can potentially arise, thus increasing the degrees of evolutionary freedom. A consensus is emerging that diversity in multicellular organisms primarily reflects changes in the regulatory interactions that shape gene expression.... the broad and diverse regulatory dimensionality dramatically increases the potential evolutionary change points. Additionally, because these regulatory systems are highly epistatic, change in any one genetic element can lead to novel phenotypic effects'' \cite{Moczek2011TheInnovation}
+    \end{itemize}
+  
+\section{Selection Pressure} 
+
+\subsection{Modularly Varying Fitness Function} \label{sec:mvff}
+  \begin{itemize}
+    \item Figure \ref{fig:hummingbird_selection_pressure}
+    \item ``The main idea is that if selection sets a moving target, individuals will be more likely to introduce variation in their offspring to adapt to an uncertain future; mutations to the genotype will be more likely to result in phenotypic change'' \cite{Wilder2015ReconcilingEvolvability}
+    \item \begin{displayquote}
+    Representations that exhibit high evolvability even when there is little selection pressure are desirable, especially in cases like co-evolution, where large fitness differentials cannot necessarily be guaranteed. Since  static  fitness  functions  do  not  provide  pressure  to select for evolvability, even if a representation has high latent evolvability, it may exhibit little acquired evolvability under  such  circumstances.   This  insight  is  important  because it may help explain the tendency for “brittle” evolved solutions, i.e. solutions whose local mutation space reflects simply how rugged the fitness function is.  In general, static fitness functions may be a cause of low evolvability in artificial evolution... \cite{Reisinger2006SelectingRepresentations}
+      \end{displayquote}
+  \end{itemize}
+  
+\subsection{Explicitly Selecting for Evolvability} \cite{Mengistu2016EvolvabilityIt}
+
+\subsection{Divergent Selection} \label{sec:divergent_selection}
+``selecting for individuals that find strategies uncommon in the rest of the population... selection does not focus on an externally determined target. Instead, it depends on the composition of the population in a manner that rewards behavioral diversity. \cite{Wilder2015ReconcilingEvolvability}
+   rewarding novelty indirectly encourages evolvability because mechanisms that consistently enable novelty (and will thereby be consistently selected) also enable phenotypic variability \cite{Mengistu2016EvolvabilityIt} -> \cite{Lehman2011ImprovingSelf-Adaptation}
+
+
+  
+

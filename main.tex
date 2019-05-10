@@ -1,0 +1,60 @@
+\documentclass[a4paper]{report}
+
+\input{imports.tex}
+
+ %\indexsetup{level=\paragraph*,toclevel=paragraph}
+\setcounter{table}{0}
+\makeindex[name=mindmap,title=\normalsize{Table {\refstepcounter{table}\arabic{table}\label{table:intext}}: In-text Descriptions of Relationships Between Concepts Related to Evolvability}, columns=3, options= -s index_style.ist]
+
+\renewcommand{\listfigurename}{Listing of Original Figures}
+
+\setcounter{tocdepth}{2}
+
+\input{macros.tex}
+\setcounter{secnumdepth}{5}
+% \addbibresource{Mendeley.bib}
+
+\title{Evolvability: What Is It and How Do We Get It?}
+\author{Matthew Andres Moreno}
+
+\input{tex/glossary.tex}
+
+\begin{document}
+%\input{todo.tex}
+
+\maketitle
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\listoffigures
+
+\newpage
+
+\doublespacing
+
+\input{tex/introduction.tex}
+
+\input{tex/definition.tex}
+
+\newpage
+\input{tex/proximate.tex}
+
+\input{tex/intermediate.tex}
+
+\input{tex/ultimate.tex}
+
+\input{tex/discussion.tex}
+
+\input{tex/conclusion.tex}
+
+\newpage
+\printglossaries
+
+\newpage 
+\addcontentsline{toc}{chapter}{References}
+\bibliography{Mendeley}
+\bibliographystyle{apalike}
+
+
+\end{document}

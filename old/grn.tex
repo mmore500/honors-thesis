@@ -1,0 +1,44 @@
+\subsection{Genetic Regulatory Networks (GRNs)}
+  \begin{itemize}
+    \item ``Without regulation, every functional gene would presumably be ubiquitously expressed (or vestigial), and new phenotypes would require the addition of new functional genes. The presence of regulatory genes provides an exponential number of possible phenotypes from the same set of functional genes, some of which may be on (expressed) and others repressed at any particular time in evolution or any spatiotemporal point in development'' \cite[p 220]{Downing2015IntelligenceSystems}
+    \item ``Encodings based on GRNs and developmental systems allow for this kind of adaptation implicitly through overlapping gene expression domains: (1) Weak linkages allow mutations to affect both fundamental and fine tune-tuned structure, (2) Expression domains can be easily copied between genes, and (3) Upstream mutations can shift expression domains. These mechanisms are powerful precisely because search becomes constrained, generating only highly adaptive phenotypes.'' \cite{Reisinger2007AcquiringRepresentations}
+    \item ``... increasing the points in ontogeny at which change can potentially arise, thus increasing the degrees of evolutionary freedom. A consensus is emerging that diversity in multicellular organisms primarily reflects changes in the regulatory interactions that shape gene expression.... the broad and diverse regulatory dimensionality dramatically increases the potential evolutionary change points. Additionally, because these regulatory systems are highly epistatic, change in any one genetic element can lead to novel phenotypic effects'' \cite{Moczek2011TheInnovation}
+    \end{itemize}
+
+\subsection{Complexification}
+  \begin{itemize}
+    \item ``The indirect encoding in this paper is motivated by a key concept from developmental biology. Nature builds complex organisms by producing increasingly complex geometric coordinate frames, and then determining the fate of phenotypic elements as a function of their location within such frames. This process produces phenotypes with regularity, modularity, and hierarchy, which are beneficial design principles'' \cite{Clune2011OnRegularity}
+    \item ``direct encodings like NEAT can complexify ANNs over generations by adding new nodes and connections through mutation... ES-HyperNEAT is able to elaborate on existing structure in the substrate during evolution'' \cite{}
+  \end{itemize}
+
+\subsection{Indirect Encodings} \label{sec:indirect_encodings}
+  \begin{itemize}
+    \item Figure \ref{fig:direct_irregular_vs_indirect_regular} illustrates the bias towards regularity that is induced by indirect genetic encoding.
+  	\item NEAT \cite[p 324]{Downing2015IntelligenceSystems}
+    \item , with CPPN as illustrated by 
+    \item Iterated ES HyperNEAT 
+    \item adaptive HyperNEAT \cite{Risi2010IndirectlyRules}
+    \item 
+    \item computationally-heavy A-Life approaches (one extreme in the spectrum) such as Bongard and Pfeifer artificial ontogeny (AO) system \cite[p 345]{Downing2015IntelligenceSystems}
+    \item other, ``historical'', approaches: 
+    \item allows EA to ``scale up'' to large networks
+    \item  
+    \item ``indirect encodings (also known as generative or developmental encodings), wherein information in the genome can be reused to affect many parts of the phenotype.'' \cite{Clune2011OnRegularity}
+    \item ``We here propose that this bias towards regularity is critical to evolve plastic neural networks that can learn in a large variety of situations'' \cite{Tonelli2013OnNetworks}
+    \item spandrel --- phenotypic characteristic that is a byproduct of evolution of some other charactersitic, not a direct product of adaptive selection (regularity/symmetry encourages these) $\rightarrow$ allow for more general learning abilities \cite{Tonelli2013OnNetworks}
+    \item example ``The HyperNEAT gaits are all regular. They feature two separate types of regularity: coordination between legs, and repetition of the same movement pattern across time.The first type has four-way symmetry, wherein each leg moves in unison and the creature bounds forward repeatedly. This gait implies that HyperNEAT is reusing neural information in a regular way to control all of the robot’s legs.'' \cite{Clune2011OnRegularity}
+  \item ``Reusing genetic information also facilitates scalability. With indirect encodings, evolution can search in a low-dimensional space yet produce phenotypes with many more dimensions. For example, only about 25 000 genes encode the information that produces the trillions of cells that make up a human.'' \cite{Clune2011OnRegularity}
+  \end{itemize}
+
+\subsection{Modularly Varying Fitness Function} \label{sec:mvff}
+  \begin{itemize}
+    \item Figure \ref{fig:hummingbird_selection_pressure}
+    \item ``if selection sets a moving target, individuals will be more likely to introduce variation in their offspring to adapt to an uncertain future; mutations to the genotype will be more likely to result in phenotypic change'' \cite{Wilder2015ReconcilingEvolvability}
+    \item \begin{displayquote}
+    Representations that exhibit high evolvability even when there is little selection pressure are desirable, especially in cases like co-evolution, where large fitness differentials cannot necessarily be guaranteed. Since  static  fitness  functions  do  not  provide  pressure  to select for evolvability, even if a representation has high latent evolvability, it may exhibit little acquired evolvability under  such  circumstances.   This  insight  is  important  because it may help explain the tendency for “brittle” evolved solutions, i.e. solutions whose local mutation space reflects simply how rugged the fitness function is.  In general, static fitness functions may be a cause of low evolvability in artificial evolution... \cite{Reisinger2006SelectingRepresentations}
+      \end{displayquote}
+  \end{itemize}
+  
+  \subsection{Divergent Selection} \label{sec:divergent_selection}
+``selecting for individuals that find strategies uncommon in the rest of the population... selection does not focus on an externally determined target. Instead, it depends on the composition of the population in a manner that rewards behavioral diversity. \cite{Wilder2015ReconcilingEvolvability}
+   Interestingly enough, rewarding novelty indirectly encourages evolvability because mechanisms that consistently enable novelty (and will thereby be consistently selected) also enable phenotypic variability \cite{Mengistu2016EvolvabilityIt} -> \cite{Lehman2011ImprovingSelf-Adaptation}

@@ -1,0 +1,218 @@
+\chapter{Proximate Causes of Evolvability} \label{sec:proximate}
+
+The robustness of biological organisms, the ability to persist under a range of environmental conditions, is well understood by scientists, and envied by engineers.
+Students of human physiology drown in the plethora of mechanisms through which the body acts to counter any number of disruptive influences in its relentless pursuit of homeostasis.
+When blood sugar spikes, pancreatic cells respond by releasing insulin to prompt absorption of glucose from the bloodstream. When ambient temperature decreases, capillaries below the surface of the skin close to prevent loss of heat through the skin, evaporative cooling through sweating ceases, and a shivering reflex in skeletal muscles is triggered to spur heat production \cite{Guyton1971BasicDisease, Benzinger1969HeatMan.}.
+Alter most any aspect of the body or its environment within reasonable bounds, and an array of biological systems spring into reaction.
+
+Similar processes are at play in embryological development, cushioning that process against internal hiccups and external interference.
+The plasma membranes of embryological cells are known to be resilient to strain and perforation.
+Disruption of the barrier between the cell and its surroundings leads to an influx of calcium ions, which induce rapid incorporation of waiting intracellular vesicles at the site of the leak.
+These vesicles patch over the damage, allowing the cell to survive and continue along its proper developmental trajectory \cite{Hamdoun2007EmbryoWorld.}.
+Embryological development exhibits robustness at a broader scope, as well.
+Consider the processes that lay out the body plan of \textit{Drosophila melanogaster}.
+In this organism, anterior-posterior directional information is broadcast to developing \textit{Drosophila} cells through a concentration gradient of the morphogen bicoid.
+However, proper organization of body segments are maintained over a range of temperatures, across which bicoid distribution is known to be disrupted.
+The mechanisms that account for this surprising maintenance of fidelity to the proper body plan, as of 2007, have not been definitively established \cite{Hamdoun2007EmbryoWorld.}.
+
+However, not all biological components and subsystems --- in embryos and beyond --- are configured to suppress variability in phenotypic form.
+In response to seasonal cues, butterflies are known to alternatively suppress or activate expression of a pronounced eye spot. \textit{Daphia}, better known as water fleas, are known to modulate the fortitude of their immune system based on the amount of infectious bacteria mothers encounter during reproduction  \cite{Hamdoun2007EmbryoWorld.}.
+Metabolic processes in adult rats are contingent on nutritive conditions encountered during embryological development.
+Rats whose mothers were kept on a restricted diet during pregnancy tend to gain more weight when exposed to high-calorie diets than rats whose mothers had better access to food \cite[p 57]{Wilson2007EvolutionLives}.
+A similar embryological decision-making approach is at play in male dung beetles, which develop along alternate trajectories --- one displaying a horned forehead in adulthood and the other displaying a naked forehead in adulthood --- depending on their body size at a certain juncture of infancy.
+Horns are thought to be most useful to beetles capable of levying significant bulk against romantic competitors and are otherwise superfluous \cite[p 47]{Wilson2007EvolutionLives}.
+
+Biological organisms are predisposed to minimize some types of phenotypic variability and to allow, or even encourage, other variability in other phenotypic dimensions.
+The systems and subsystems that regulate variability often persist under mild mutative perturbation.
+Thus, these systems and subsystems act upon the mutative perturbation and mold the phenotypic effects that result from the mutation.
+Some phenotypic changes are suppressed while others are tolerated.
+
+Proximal causality of evolvability results from the relationship between the phenotypic form of biological organisms and the phenotypic changes that can manifest as a result from mutation.
+Kirschner et al. zero in on this idea, emphasizing that --- although genotypic mutation is essentially an arbitrarily random process --- ``phenotypic variation cannot be random because it involves modification of what already exists'' \cite[p 220]{Kirschner2005TheDilemma}.
+I agree with the sentiment of this observation, however the precision of the language Kirschner et al. use could be improved.
+They use the word random to express an idea that could be better termed as unconstrained or arbitrary randomness.
+Ultimately, phenotypic variation results from genetic perturbation, which is random and arbitrary.
+The key observation that Kirschner et al. have made, and which will be presented in this section, is that while phenotypic variation is stochastic, it is not arbitrary.
+This section aims to highlight how design patterns common in biological organisms transform random mutation into structured phenotypic variation. A good amount of material presented in this section is framed by or drawn from the Theory of Facilitated Variation, originally presented in \cite{Kirschner2005TheDilemma}, as reported in \cite{Downing2015IntelligenceSystems}.
+
+
+\section{Complexification} \label{sec:complexification}
+\subsection{Definition}
+Complexification refers to the development of sophisticated phenotypic functionality through the incremental refinement and elaboration over evolutionary time \cite[pg 202]{Downing2015IntelligenceSystems}.
+In this process, a phenotypic structure results not from a single mutation event but instead from a sequential series of modifications, each building upon the last. 
+Many intermediate forms of the phenotypic feature are observed, with a trend towards increasing sophistication, are observed.
+It should be noted that the stepping stones of complexification, intermediate phenotypic forms, need not share the same functionality.
+
+\subsection{Relation to Evolvability}
+Complexification biases evolutionary search towards viable variation. In short, variants of already-existing phenotypic structures are more likely to be useful than randomly-generated phenotypic structures
+If existing phenotypic structures could not readily be elaborated upon, the chance of evolution happening upon viable variation would be vanishingly small.
+
+The capacity of a genotype-phenotype mapping to accommodate complexification in evolutionary computing cannot be taken for granted.
+Consider, for example, an evolving artificial neural network.
+In this context, a network that starts out with very few nodes and adds nodes over the course of evolution --- thus, developing a more complex phenotype --- exhibits complexification \cite{Clune2011OnRegularity}.
+Genetic encodings that encode phenotypes with a fixed number of nodes would be incapable of exhibiting this form of complexification.
+The capacity genotype-phenotype mapping to accommodate complexification --- its capacity to translate additions of genetic information into refinement of existing phenotypic features --- will be key to achieving evolvability in evolutionary computing.
+
+\subsection{Example}
+The evolution of the vertebrate eye epitomizes complexification.
+It is thought that this structure evolved through a series of intermediates, beginning with a simple region of enervated photosensitive cells.
+A folded-in, photosensitive pouch-like structure, which provided directional sensitivity, is thought to have arisen next.
+Pinhole and lens structures, which provide greater visual acuity, are thought to have descended from the pouch structures \cite{Gregory2008TheOrgans}.
+These intermediate phenotypic structures, each elaborating on an existing phenotypic form, can be observed in extant organisms as illustrated in Figure \inputandref{eye_evolution}.
+
+The complexification of vertebrate eyes was enabled by the nature of the biological genotype-phenotype mapping.
+The biological genotype-phenotype mapping mapping is capable of accommodating increased amounts of genetic information describing an existing phenotypic trait and translating that new information into refinement of the existing phenotypic trait.
+For example, in the transition from light sensitive patches to photosensitive pouches the genotype-phenotype mapping accommodated new information altering the shape of the surface in which light sensitive cells are embedded while preserving the general arrangement and connectivity of the light sensitive cells.
+
+\section{Duplication and Divergence} \label{sec:duplication_and_divergence}
+
+\subsection{Definition}
+Duplication and divergence refers to a two step process thought to be essential to the evolution of new genes in biology.
+In the first step, duplication, the genetic information coding for a phenotypic feature is duplicated in the genome.
+In the second step, divergence, one of the gene copies is modified by mutation.
+
+\subsection{Example}
+Homeobox genes provide a canonical example of duplication and differentiation in action.
+These genes, which lay out the body plan of a developing embryo, have been duplicated and differentiated many times, at each step adding novel body plan features \cite[p 203]{Downing2015IntelligenceSystems}.
+In particular, Homeobox genes have seen re-use in determining brain segmentation.
+Fascinating parallels can be drawn between the the topology of the brain and an animal body plan \cite[p 201]{Downing2015IntelligenceSystems}.
+
+\subsection{Relation to Evolvability}
+
+Duplication and divergence allows for re-use of evolved functionality. It is much more tractable to achieve sophisticated functionality by modification of existing biological components, for which evolution has already worked out most of the kinks, than starting from scratch. 
+Further, duplication and divergence can jump start the evolution of new functionality without disrupting the functionality originally encoded in the genome.
+The original gene is preserved.
+By allowing gene evolution to fork out to achieve a widening array of functionality, duplication and divergence paves a tractable route to gradual phenotypic complexification \cite[p 202]{Downing2015IntelligenceSystems}.
+
+
+\section{Developmental Constraint} \label{sec:developmental_constraint}
+
+\subsection{Definition}
+Developmental constraint refers to the influence of the development process on the distribution of phenotypic forms that can be generated in the offspring of an individual \cite{Smith1985DevelopmentalBiology}. The concept of developmental constraint rests upon the idea that certain phenotypic forms are more likely to arise because they are more readily generated by physicochemical processes that underpin embryological development \cite{Smith1985DevelopmentalBiology}. Because the genotype is interpreted into phenotypic form in large part through the developmental system, the phenotypic outcomes of mutation are closely linked to the configuration of the developmental system.
+
+\subsection{Relation to Evolvability}
+Developmental constraint might restrict nonadaptive variation, biasing evolutionary search towards viable phenotypes \cite[pg 40]{Downing2015IntelligenceSystems}.
+Developmental constraint that funnels phenotypic variation towards viability contributes to canalization (Section \ref{sec:canalization}). 
+However, developmental constraints may also be arbitrary.
+For example, centipedes exhibit an apparent constraint towards developing an odd number of body segments \cite{Arthur1999TheEvolution}.
+Thus, developmental constraint can, but need not necessarily, contribute to canalization.
+
+\subsection{Example} \label{sec:fly_symmetry}
+Artificial selection experiments performed by several laboratories on \textit{Drosophila melangoster} revealed developmental constraint towards bilateral symmetry.
+Artificial selection experiments on symmetrically distributed traits (i.e. overall eye size, overall bristle count, etc.) \textit{Drosophila melangoster} have a high rate of success.
+However, artificial selection for left-right traits generally fails. 
+For example, artificial selection experiments were unable to introduce an asymmetric bias in thorasic bristle counts despite many generations of selection.
+Although phenotypic variation in left-right thorasic bristle number existed in the population, that variation was not heritable.
+Similar results have been reported in relation to artificial selection for asymmetric distribution of eye size \cite{Coyne1987LackMelanogaster}, eye facet number \cite{ManyardSmith1960ThePattern}, and wing-folding behavior \cite{Purnell1973SelectionMelanogaster} in \textit{Drosophila melanogaster}.
+Tuinstra et al. hypothesize that this canalization results from the developmental process, ``as no evidence is available for an independent left-right gradient in the embryo, quantitative traits can only be expressed variably along an existing gradient of positional information or a morphagen`` \cite{Tuinstra1990LackDevelopment}.
+It seems that the nature of the developmental process makes heritable variation for bilaterally asymmetric traits in \textit{Drosophila} more difficult to come by.
+A cartoon summarizing the outcome of these experiments  is provided in Figure \ref{fig:fly_canalization}.
+
+\section{Hidden Genetic Variation} \label{sec:hidden_genetic_variation}
+\subsection{Definition}
+Hidden genetic variation, also known as cryptic variation or neutral variation, refers to genetic diversity in a population that does not manifest as phenotypic diversity.
+In biological systems, many genotypes map to a identical or nearly identical phenotypes.
+This many-to-one relationship may be due to the presence of variation in non-coding DNA, variation in genes for which phenotypic effects are suppressed by regulatory mechanisms, or degeneracy in the genetic code (i.e. several codons encoding the same amino acid residue).
+It is thought that the homeostatic mechanisms that promote robustness facilitate hidden genetic variation by counteracting the phenotypic changes that might be induced by some forms of genetic variation \cite{Moczek2011TheInnovation}.
+Environmental influence on the phenotype might contribute to an intermediate form of cryptic variation where a trait is expressed phenotypically in only a subset of the population due to differences in environmental conditions.
+Such a trait would therefore be somewhat hidden from phenotypic expression \cite{Moczek2011TheInnovation}.
+
+\subsection{Relation to Evolvability}
+Because cryptic genetic variation is not selected upon by evolution, it can accumulate in a population.
+This accumulated genetic variation is thought to promote evolutionary innovation \cite{Wilder2015ReconcilingEvolvability} several ways.
+By allowing for a broader distribution of a population through a genotype space, cryptic variation increases the phenotypic diversity that can be realized in offspring from the population because individuals in the population can ``access radically different phenotypes in their immediate mutational neighborhood'' \cite{Wilder2015ReconcilingEvolvability}.
+Cryptic variation is also thought to allow for larger steps to be taken in the mutational search space during evolutionary search.
+Significant accumulated cryptic variation can rapidly switch to being expressed through a sensitizing mutation or environmental change \cite{Moczek2011TheInnovation}.
+
+\subsection{Example}
+Work with strains of the model organism \textit{Drosophila melanogaster} possessing the mutation \textit{Scute} has unmasked elements of hidden genetic variation in wild type \textit{Drosophila} \cite{Wagner2003EvolutionaryUnveiled}.
+The mutation \textit{Scute} increases the number of bristles observed on \textit{Drosophila} and, more intriguingly, also boosts the variability in bristle count observed between individuals.
+\textit{Scute} mutants exhibit exhibit more variability in bristle counts than wild type \textit{Drosophila} by several orders of magnitude.
+Artificial selection experiments revealed a stronger response in the mutant populations to selection for bristle counts than in wild type populations.
+Thus, some of the variation of the \textit{Scute} mutant phenotype seems to have a heritable genetic basis.
+It is hypothesized that the mutation \textit{Scute} sensitized \textit{Drosophila melanogaster} to existing genetic variation. The experiments demonstrated ``genetic variation for the character that is not expressed in the wild type, but becomes visible in the mutant background'' \cite{Wagner2003EvolutionaryUnveiled}. In other words, the mutation \textit{Scute} revealed previously hidden genetic variation for bristle count.
+
+\section{Exploratory Growth}
+\subsection{Definition}
+Exploratory growth refers to the incorporation of search into the developmental process. Instead of having developmental components grow to hard-coded proportions and in hard-coded locations, developmental processes incorporate information about the the current state of the organism into the developmental trajectories of system components \cite[p 214]{Downing2015IntelligenceSystems}.
+
+\subsection{Relation to Evolvability}
+Because other systems in a developing organism can change to adapt to changes in one system, exploratory growth reduces the probability of mutations leading to catastrophic fitness decline or outright mortality. Thus, exploratory growth promotes both canalization and robustness: translation of genetic changes into phenotypic effects are more likely to be resisted and, if they do occur, they are more likely to be viable because the development of the organism adapts to compensate for those changes. As Downing argues, due to exploratory growth ``the production of novel phenotypes does not require concerted change to many parts of the genome, a very low-probability combination of events, but rather a single change to a factor affecting an early phase of development. The rest just grow to fit the altered context...'' \cite[p 214]{Downing2015IntelligenceSystems}.
+
+\subsection{Example}
+The structural components of the mammalian body develop in a ``grow to fit'' pattern. The development of bones and muscles is defined by a process in which they seek out attachment sites defined by other components of the developing system. These components ``grow to fit'' in the sense that they grow (or shrink) to fit an altered developmental context. The final form of these structures is determined through exploration of the developmental environment \cite[pg 214]{Downing2015IntelligenceSystems}. Mesychme cells, a cell type observed in animal embryos that is a precursor to several tissue types, provide another striking example of exploratory growth. During embryological cellular migration, mesenchyme cells extend filopodia to explore their environment; several filopodia attach to different sites on the blastocoel wall, and the final position of the cell is determined from a tug-of-war between the filopodia --- the mesenchyme cell will choose the site where it found most stable attachment. In this way, exploration performed by mesychyme cells contributes to the development process \cite[pg 214]{Downing2015IntelligenceSystems}.
+
+The development of the nervous system is heavily marked by exploratory growth. In the brain, an excess of candidate neural networks are created during the development process. Fledgling networks with insufficient connectivity to the rest of the network are then culled; essentially, the final components of the brain are derived of a much larger number of competing trial subnetworks, many of which are failures \cite[p 214]{Downing2015IntelligenceSystems}. Ennervation of the body during development proceeds in a similar trial-and-error fashion. Excess neurons migrate and extend processes to seek out and compete for targets; many are unsuccessful and, ultimately, die \cite{Edelman2001DegeneracySystems}.
+
+\section{Weak Linkage}
+
+\subsection{Definition}
+The concept of weak linkage is predicated on a distinction between instructive and enabling signals \cite[p 210]{Downing2015IntelligenceSystems}.
+Instructive signals contain significant amounts of information about the process to be performed, not just information that a process should be performed. 
+In contrast, enabling signals are concise; the only information they contain is that the process should be performed.
+In an enabling signal scheme, information characterizing a response to the signal is stored in the system that receives the signal and not in the signal itself \cite[p 283]{Kirschner2005TheDilemma}.
+Weak linkage refers to interaction of subsystems of a biological organism coordinated by enabling, rather than instructive, signals.
+
+Let us examine an economic analogy based around a hypothetical bakery to tease apart the difference between instructive and enabling signaling.
+Suppose the bakery has a telephone.
+Detailed instructions delivered over the telephone about the recipes, ingredient sources, and a schedule for production that should be used would be considered an instructive signal.
+Consider if, instead, the baker were to adjust his production based solely on the frequency with which the telephone rang throughout the day.
+Under this scheme, bakery output can still be influenced by external signals.
+However, the amount of information required to signal the bakery is reduced.
+Instead of needing to communicate recipes, ingredient sources, and a schedule for production, external sources just need to know the telephone number for the bakery.
+Thus, such a scheme would be considered enabling signaling.
+A collection of industries in small town coordinated by such enabling, rather than instructive, signals would be said to exhibit weak linkage.
+
+\subsection{Relation to Evolvability}
+With simple signaling protocols, the probability of mutation establishing interaction between two systems via signaling is increased.
+Of particular interest is the role of weak linkage in allowing an externally triggered signal to become innate.
+On a cellular level, many environmental signals, such as the concentration of a certain chemical compound in an organism's environment, are of an enabling nature.
+Environmental enabling signals can often be mimicked by the cell itself and are therefore accessible to becoming innately triggered \cite[p 210]{Downing2015IntelligenceSystems}.
+This scheme provides a plausible for phenotypic traits that are originally environmentally-induced (i.e. indirect plasticity, see Section \ref{sec:indirect_plasticity}) to be incorporated on a permanent, heritable basis.
+
+Additionally, under a weak signaling regime information required to perform a process is more tightly contained within the context of the subsystem that performs the process.
+Thus, weak signaling promotes modularity.
+
+\subsection{Example}
+In the grossest terms, a neuron consists of an input component, which is responsive to the presence of a specific subset of neurotransmitters, and output, which releases a different specific subset of neurotransmitters.
+The specific subsets of neurotransmitters a neuron's input and output is sensitive to varies between neuron types.
+These two components of the neuron interface via electrical voltage.
+An action potential conducts information from the input component of the neuron to its output component.
+The action potential is an enabling signal.
+Information contained in the signal is minimized --- binary on/off information is signified by the presence or absence of an action potential.
+This arrangement allows input and output components to be freely mixed and matched in a single neuron.
+The freedom to mix and match is enabled by the simple nature of the signal that interfaces the input and output components.
+Thus, weak linkage makes a large number of viable neural configurations readily accessible to evolution \cite[p 139]{Kirschner2005TheDilemma}.
+
+\section{Baldwin Effect}
+
+\subsection{Definition}
+The Baldwin effect postulates that local search in the phenotype space biases evolutionary search to allow advantageous phenotypic features originally acquired via phenotypic plasticity to be encoded into the genetic representation \cite{Downing2010TheNetworks}.
+In the first phase of the Baldwin effect, advantageous phenotypic features discovered by local search in the phenotype space increase the fitness of individuals proximal to that phenotype.
+In the second phase of the Baldwin effect, continued evolutionary search encodes phenotypic features originally discovered by phenotypic plasticity into the genetic representation.
+
+The first phase of the Baldwin effect is driven by local phenotypic search.
+This concept is illustrated in Figure \inputandref{baldwin_effect}, where the phenotype space is depicted as a three dimensional surface with points on the surface representing different phenotypes and the height of the surface denoting the fitness of the phenotypes at those points.
+In the illustration, the dark blue square represents the phenotype originally mapped to by the genetic representation of an individual, the blue shaded region represents the region of the phenotype space searched via phenotypic plasticity, and the red star represents a high fitness phenotypic variant reached via phenotypic plasticity. 
+The fitness boost gained from phenotypic proximity to a high fitness solution biases evolutionary search to continue exploring that region instead of proceeding in other directions.
+
+Cost or unreliability of generating the advantageous phenotypic feature via phenotypic plasticity provides evolutionary pressure that favors genetic encoding of that phenotypic feature, driving the second phase of the Baldwin effect.
+In the case of indirect genotype to phenotype mappings, a direct genetic encoding of the feature discovered via phenotypic plasticity might not exist; however, genomes that map to phenotypes closer to the phenotypic feature discovered by plasticity --- which support attainment of the phenotypic feature by reducing the cost or increasing the reliability of acquiring that feature via plasticity, providing ``scaffolding'' for the local phenotypic search --- may still arise and will be selected for \cite{Downing2012HeterochronousBaldwinism}.
+
+
+\subsection{Relation to Evolvability}
+By allowing a candidate solution to assume proximal phenotypic forms, local phenotypic search allows evolutionary selection to act on information about a candidate solution's local phenotypic neighborhood.
+Through selective pressure for phenotypes proximal to high-fitness phenotypic forms, local phenotypic search ``buys evolutionary time'' until heritable scaffolding arises to support phenotypic adaptation originally attained via plasticity \cite{Downing2010TheNetworks}.
+
+\subsection{Example}
+The Baldwin Effect has been hypothesized to play a role in mammalian brain evolution.
+Learning is thought to play the role of local phenotypic search \cite{Downing2010TheNetworks}.
+In the first phase of the Baldwin Effect, advantageous brain organizational traits would have been achieved by learning.
+Individuals capable of achieving these traits by learning would exhibit greater fitness.
+This fitness reward allowed individuals with a baseline capacity to achieve advantageous brain organizational traits by learning to persist.
+Downing claims that over evolutionary time the processes of neurogenesis, synapogenesis, and synaptic tuning have shifted away from the postnatal life phase, becoming increasingly concentrated in the prenatal developmental developmental phase \cite{Downing2012HeterochronousBaldwinism}.
+More simply put, brain organization activity retracted into the initial embryological phase of life.
+The phenotype is generally considered to be more strongly governed by genetic influences (as opposed to environmental influences) during the embryological phase relative to later phases of life.
+The retraction of brain organization activity brain into the initial embryological phase of life thus corresponds to the second phase of the Baldwin Effect, a shift towards stronger genetic influence on traits related to brain organization originally discovered by local phenotypic search.
+Under this hypothesis, brain structures that were originally obtained by learning (local phenotypic search) became increasingly encoded in the genotype.
+
